@@ -1,19 +1,15 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $phoneNumber = $_POST['phoneNumber'];
-    $address = $_POST['address'];
-    $cartDetails = $_POST['cartDetails'];
-
-    $to = "eharishreddy9963@gmail.com";
-    $subject = "New Order";
-    $message = "Name: $name\nPhone Number: $phoneNumber\nAddress: $address\n\nCart:\n$cartDetails";
-    $headers = "From: Your Website <eharishreddy9963@example.com>";
-
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Email sent successfully!";
-    } else {
-        echo "Failed to send email!";
-    }
+function sendEmail(name, phoneNumber, address, cartDetails) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "send_email.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert(xhr.responseText);
+            } else {
+                alert("Failed to send email!");
+            }
+        }
+    };
+    xhr.send(`name=${encodeURIComponent(name)}&phoneNumber=${encodeURIComponent(phoneNumber)}&address=${encodeURIComponent(address)}&cartDetails=${encodeURIComponent(cartDetails)}`);
 }
-?>
