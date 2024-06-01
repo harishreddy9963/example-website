@@ -1,7 +1,5 @@
-// Array to store cart items
 let cartItems = [];
 
-// Function to add a product to the cart
 function addToCart(product) {
     const existingItemIndex = cartItems.findIndex(item => item.product === product);
     if (existingItemIndex !== -1) {
@@ -12,19 +10,16 @@ function addToCart(product) {
     renderCart();
 }
 
-// Function to remove a product from the cart
 function removeFromCart(index) {
     cartItems.splice(index, 1);
     renderCart();
 }
 
-// Function to increment the quantity of a product in the cart
 function incrementQuantity(index) {
     cartItems[index].quantity++;
     renderCart();
 }
 
-// Function to decrement the quantity of a product in the cart
 function decrementQuantity(index) {
     if (cartItems[index].quantity > 1) {
         cartItems[index].quantity--;
@@ -32,7 +27,6 @@ function decrementQuantity(index) {
     }
 }
 
-// Function to render the cart items
 function renderCart() {
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
@@ -75,40 +69,68 @@ function renderCart() {
     });
 }
 
-// Function to handle checkout
 function checkout() {
+    // Check if the shopping cart is empty
+    if (cartItems.length === 0) {
+        alert('Your shopping cart is empty. Please select products to checkout.');
+        return;
+    }
+
     const name = prompt('Please enter your name:');
+    // Check if the user clicked cancel
     if (name === null) return;
+    if (!isValidName(name)) {
+        alert('Please enter a valid name (alphabets and spaces only).');
+        return;
+    }
+
     const phoneNumber = prompt('Please enter your phone number:');
+    // Check if the user clicked cancel
     if (phoneNumber === null) return;
+    if (!isValidPhoneNumber(phoneNumber)) {
+        alert('Please enter a valid phone number (10 digits only).');
+        return;
+    }
+
     const address = prompt('Please enter your address:');
+    // Check if the user clicked cancel
     if (address === null) return;
+    if (!isValidAddress(address)) {
+        alert('Please enter your address.');
+        return;
+    }
+
     const cartDetails = cartItems.map(item => `${item.product} x ${item.quantity}`).join('\n');
-    const message = `Name: ${name}\nPhone Number: ${phoneNumber}\nAddress: ${address}\n\nCart:\n${cartDetails}`;
-    const confirmation = confirm(`Are you sure you want to place this order?\n\n${message}`);
-    if (confirmation) {
+
+    const confirmOrder = confirm(`Name: ${name}\nPhone Number: ${phoneNumber}\nAddress: ${address}\n\nCart:\n${cartDetails}\n\nClick OK to confirm order.`);
+    if (confirmOrder) {
         sendEmail(name, phoneNumber, address, cartDetails);
     }
 }
 
-// Function to send email
 function sendEmail(name, phoneNumber, address, cartDetails) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "send_email.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                alert(xhr.responseText);
-            } else {
-                alert("Failed to send email!");
-            }
-        }
-    };
-    xhr.send(`name=${encodeURIComponent(name)}&phoneNumber=${encodeURIComponent(phoneNumber)}&address=${encodeURIComponent(address)}&cartDetails=${encodeURIComponent(cartDetails)}`);
+    const subject = encodeURIComponent("New Order");
+    const body = encodeURIComponent(
+        `Name: ${name}\nPhone Number: ${phoneNumber}\nAddress: ${address}\n\nCart:\n${cartDetails}`
+    );
+    const mailtoLink = `mailto:eharishreddy9963@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open user's default email client
+    window.location.href = mailtoLink;
 }
 
-// Event listener to scroll up
+function isValidName(name) {
+    return /^[a-zA-Z\s]+$/.test(name);
+}
+
+function isValidPhoneNumber(phoneNumber) {
+    return /^\d{10}$/.test(phoneNumber);
+}
+
+function isValidAddress(address) {
+    return address.trim() !== '';
+}
+
 window.addEventListener('scroll', function() {
     var scrollPosition = window.pageYOffset;
 
@@ -119,7 +141,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Event listener to scroll to top
 document.querySelector('.back-to-top').addEventListener('click', function() {
     window.scrollTo({
         top: 0,
