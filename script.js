@@ -1,5 +1,7 @@
+// Array to store cart items
 let cartItems = [];
 
+// Function to add a product to the cart
 function addToCart(product) {
     const existingItemIndex = cartItems.findIndex(item => item.product === product);
     if (existingItemIndex !== -1) {
@@ -10,16 +12,19 @@ function addToCart(product) {
     renderCart();
 }
 
+// Function to remove a product from the cart
 function removeFromCart(index) {
     cartItems.splice(index, 1);
     renderCart();
 }
 
+// Function to increment the quantity of a product in the cart
 function incrementQuantity(index) {
     cartItems[index].quantity++;
     renderCart();
 }
 
+// Function to decrement the quantity of a product in the cart
 function decrementQuantity(index) {
     if (cartItems[index].quantity > 1) {
         cartItems[index].quantity--;
@@ -27,6 +32,7 @@ function decrementQuantity(index) {
     }
 }
 
+// Function to render the cart items
 function renderCart() {
     const cartList = document.getElementById('cart-items');
     cartList.innerHTML = '';
@@ -69,6 +75,7 @@ function renderCart() {
     });
 }
 
+// Function to handle checkout
 function checkout() {
     const name = prompt('Please enter your name:');
     if (name === null) return;
@@ -77,13 +84,14 @@ function checkout() {
     const address = prompt('Please enter your address:');
     if (address === null) return;
     const cartDetails = cartItems.map(item => `${item.product} x ${item.quantity}`).join('\n');
-
-    const confirmOrder = confirm(`Name: ${name}\nPhone Number: ${phoneNumber}\nAddress: ${address}\n\nCart:\n${cartDetails}\n\nClick OK to confirm order.`);
-    if (confirmOrder) {
+    const message = `Name: ${name}\nPhone Number: ${phoneNumber}\nAddress: ${address}\n\nCart:\n${cartDetails}`;
+    const confirmation = confirm(`Are you sure you want to place this order?\n\n${message}`);
+    if (confirmation) {
         sendEmail(name, phoneNumber, address, cartDetails);
     }
 }
 
+// Function to send email
 function sendEmail(name, phoneNumber, address, cartDetails) {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "send_email.php", true);
@@ -100,6 +108,7 @@ function sendEmail(name, phoneNumber, address, cartDetails) {
     xhr.send(`name=${encodeURIComponent(name)}&phoneNumber=${encodeURIComponent(phoneNumber)}&address=${encodeURIComponent(address)}&cartDetails=${encodeURIComponent(cartDetails)}`);
 }
 
+// Event listener to scroll up
 window.addEventListener('scroll', function() {
     var scrollPosition = window.pageYOffset;
 
@@ -110,6 +119,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Event listener to scroll to top
 document.querySelector('.back-to-top').addEventListener('click', function() {
     window.scrollTo({
         top: 0,
