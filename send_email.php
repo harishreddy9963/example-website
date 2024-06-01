@@ -1,15 +1,27 @@
-function sendEmail(name, phoneNumber, address, cartDetails) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "send_email.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                alert(xhr.responseText);
-            } else {
-                alert("Failed to send email!");
-            }
-        }
-    };
-    xhr.send(`name=${encodeURIComponent(name)}&phoneNumber=${encodeURIComponent(phoneNumber)}&address=${encodeURIComponent(address)}&cartDetails=${encodeURIComponent(cartDetails)}`);
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Get form data
+    $name = $_POST["name"];
+    $phoneNumber = $_POST["phoneNumber"];
+    $address = $_POST["address"];
+    $cartDetails = $_POST["cartDetails"];
+
+    // Construct email message
+    $subject = "New Order from $name";
+    $message = "Name: $name\nPhone Number: $phoneNumber\nAddress: $address\n\nCart:\n$cartDetails";
+
+    // Set email headers
+    $headers = "From: eharishreddy9963@email.com" . "\r\n" .
+               "Reply-To: eharishreddy9963@email.com" . "\r\n" .
+               "X-Mailer: PHP/" . phpversion();
+
+    // Send email
+    if (mail("eharishreddy9963@gmail.com", $subject, $message, $headers)) {
+        echo "Email sent successfully!";
+    } else {
+        echo "Failed to send email!";
+    }
+} else {
+    echo "Method not allowed!";
 }
+?>
