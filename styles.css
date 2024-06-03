@@ -1,19 +1,52 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header, footer {
+
+/* Styles for the search bar */
+#search-container {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#search-wrapper {
+    position: relative;
+}
+
+#search-input {
+    padding: 8px 20px; /* Adjust padding as needed */
+    border-radius: 20px; /* Adjust border radius as needed */
+    border: 1px solid #ccc; /* Adjust border color as needed */
+    outline: none;
+    width: 200px; /* Adjust width as needed */
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px;
+    z-index: 1000;
 }
 #sorting-bar {
+    position: fixed;
+    top: 120px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
     background-color: #f4f4f4;
     padding: 10px 20px;
     text-align: center;
+    z-index: 1000;
 }
 
 #sorting-bar ul {
@@ -39,8 +72,10 @@ header, footer {
 }
 
 #products {
-    padding: 20px;
+    padding: 80px 20px 20px; /* Adjust based on header height */
+    margin-top: 60px; /* Adjust based on sorting bar height */
 }
+/* Rest of your existing CSS styles */
 
 .product {
     margin-bottom: 20px;
@@ -80,21 +115,38 @@ header, footer {
 #cart {
     position: fixed;
     top: 50%;
-    right: 20px;
+    right: 0;
     transform: translateY(-50%);
     width: 200px;
     padding: 20px;
     background-color: #f4f4f4;
     border-left: 1px solid #ccc;
+    transition: right 0.3s ease-in-out;
 }
 
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
+#cart.collapsed {
+    right: -200px;
 }
 
+#cart-toggle {
+    position: fixed;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: left 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+#cart-toggle.collapsed {
+    left: 0;
+}
+#cart-toggle span {
+    font-size: 20px;
+}
 
 /* Contact Section Styles */
 #contact {
@@ -132,7 +184,6 @@ header, footer {
 .contact-links a:hover {
     text-decoration: underline;
 }
-
 
 /* Footer Styles */
 .footer {
