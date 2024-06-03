@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hari Electronics And Robotics </title>
+    <title>Hari Electronics And Robotics</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Hari Electronics And Robotics </h1>
+        <div id="search-container">
+        <div id="search-wrapper">
+            <input type="text" id="search-input" placeholder="Search...">
+           
+        </div>
+    </div>
+        <h1>Welcome to  Hari Electronics And Robotics</h1>
     </header>
 
     <!-- Navigation bar for sorting products -->
@@ -18,134 +24,524 @@
             <li><a href="#components">Components</a></li>
         </ul>
     </nav>
-    
-    <section id="products" class="scrollable">
-        <h2 id="projects">Projects</h2>
-        <!-- Products classified as Projects -->
-        <!-- Product 1 -->
-        <div class="product">
-            <img src="project1.jpg" alt="Project 1">
-            <div class="product-info">
-                <h3>Project 1</h3>
-                <p>Description of Project 1.</p>
-                <button onclick="addToCart('Project 1')">Add to Cart</button>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 2 -->
-        <div class="product">
-            <img src="project2.jpg" alt="Project 2">
-            <div class="product-info">
-                <h3>Project 2</h3>
-                <p>Description of Project 2.</p>
-                <button onclick="addToCart('Project 2')">Add to Cart</button>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 3 -->
-        <div class="product">
-            <img src="project3.jpg" alt="Project 3">
-            <div class="product-info">
-                <h3>Project 3</h3>
-                <p>Description of Project 3.</p>
-                <button onclick="addToCart('Project 3')">Add to Cart</button>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 4 -->
-        <div class="product">
-            <img src="project4.jpg" alt="Project 4">
-            <div class="product-info">
-                <h3>Project 4</h3>
-                <p>Description of Project 4.</p>
-                <button onclick="addToCart('Project 4')">Add to Cart</button>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 5 -->
-        <div class="product">
-            <img src="project5.jpg" alt="Project 5">
-            <div class="product-info">
-                <h3>Project 5</h3>
-                <p>Description of Project 5.</p>
-                <button onclick="addToCart('Project 5')">Add to Cart</button>
-            </div>
-            <div class="clearfix"></div>
-        </div>
 
-        <h2 id="components">Components</h2>
-        <!-- Products classified as Components -->
-        <!-- Product 6 -->
-        <div class="product">
-            <img src="component1.jpg" alt="Component 1">
-            <div class="product-info">
-                <h3>Component 1</h3>
-                <p>Description of Component 1.</p>
-                <button onclick="addToCart('Component 1')">Add to Cart</button>
+    <div id="container">
+        <!-- Only body section is scrollable -->
+        <section id="products" class="scrollable">
+            <h2 id="projects">Projects</h2>
+            <!-- Products classified as Projects -->
+            <!-- Project 1 -->
+            <div class="product">
+                <img src="project1.jpg" alt="Project 1">
+                <div class="product-info">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1.</p>
+                    <button onclick="addToCart('Project 1')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 7 -->
-        <div class="product">
-            <img src="component2.jpg" alt="Component 2">
-            <div class="product-info">
-                <h3>Component 2</h3>
-                <p>Description of Component 2.</p>
-                <button onclick="addToCart('Component 2')">Add to Cart</button>
+            <!-- Repeat for Project 2 -->
+            <div class="product">
+                <img src="project2.jpg" alt="Project 2">
+                <div class="product-info">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2.</p>
+                    <button onclick="addToCart('Project 2')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 8 -->
-        <div class="product">
-            <img src="component3.jpg" alt="Component 3">
-            <div class="product-info">
-                <h3>Component 3</h3>
-                <p>Description of Component 3.</p>
-                <button onclick="addToCart('Component 3')">Add to Cart</button>
+            <!-- Repeat for Project 3 -->
+            <div class="product">
+                <img src="project3.jpg" alt="Project 3">
+                <div class="product-info">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3.</p>
+                    <button onclick="addToCart('Project 3')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 9 -->
-        <div class="product">
-            <img src="component4.jpg" alt="Component 4">
-            <div class="product-info">
-                <h3>Component 4</h3>
-                <p>Description of Component 4.</p>
-                <button onclick="addToCart('Component 4')">Add to Cart</button>
+            <!-- Repeat for Project 4 -->
+            <div class="product">
+                <img src="project4.jpg" alt="Project 4">
+                <div class="product-info">
+                    <h3>Project 4</h3>
+                    <p>Description of Project 4.</p>
+                    <button onclick="addToCart('Project 4')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Product 10 -->
-        <div class="product">
-            <img src="component5.jpg" alt="Component 5">
-            <div class="product-info">
-                <h3>Component 5</h3>
-                <p>Description of Component 5.</p>
-                <button onclick="addToCart('Component 5')">Add to Cart</button>
+            <!-- Repeat for Project 5 -->
+            <div class="product">
+                <img src="project5.jpg" alt="Project 5">
+                <div class="product-info">
+                    <h3>Project 5</h3>
+                    <p>Description of Project 5.</p>
+                    <button onclick="addToCart('Project 5')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
-        </div>
-        <!-- Repeat for more products -->
-    </section>
 
-    <aside id="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </ul>
-        
-        
-        <button onclick="checkout()">Proceed to Checkout</button>
+             <!-- Project 1 -->
+            <div class="product">
+                <img src="project1.jpg" alt="Project 1">
+                <div class="product-info">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1.</p>
+                    <button onclick="addToCart('Project 1')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Repeat for Project 2 -->
+            <div class="product">
+                <img src="project2.jpg" alt="Project 2">
+                <div class="product-info">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2.</p>
+                    <button onclick="addToCart('Project 2')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Repeat for Project 3 -->
+            <div class="product">
+                <img src="project3.jpg" alt="Project 3">
+                <div class="product-info">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3.</p>
+                    <button onclick="addToCart('Project 3')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Repeat for Project 4 -->
+            <div class="product">
+                <img src="project4.jpg" alt="Project 4">
+                <div class="product-info">
+                    <h3>Project 4</h3>
+                    <p>Description of Project 4.</p>
+                    <button onclick="addToCart('Project 4')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Repeat for Project 5 -->
+            <div class="product">
+                <img src="project5.jpg" alt="Project 5">
+                <div class="product-info">
+                    <h3>Project 5</h3>
+                    <p>Description of Project 5.</p>
+                    <button onclick="addToCart('Project 5')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Repeat for Project 6 -->
+            <div class="product">
+                <img src="project6.jpg" alt="Project 6">
+                <div class="product-info">
+                    <h3>Project 6</h3>
+                    <p>Description of Project 6.</p>
+                    <button onclick="addToCart('Project 6')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+               <!-- Repeat for Project 7 -->
+              <!-- Project 7 -->
+<div class="product">
+    <img src="project7.jpg" alt="Project 7">
+    <div class="product-info">
+        <h3>Project 7</h3>
+        <p>Description of Project 7.</p>
+        <button onclick="addToCart('Project 7')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 8 -->
+<div class="product">
+    <img src="project8.jpg" alt="Project 8">
+    <div class="product-info">
+        <h3>Project 8</h3>
+        <p>Description of Project 8.</p>
+        <button onclick="addToCart('Project 8')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 9 -->
+<div class="product">
+    <img src="project9.jpg" alt="Project 9">
+    <div class="product-info">
+        <h3>Project 9</h3>
+        <p>Description of Project 9.</p>
+        <button onclick="addToCart('Project 9')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 10 -->
+<div class="product">
+    <img src="project10.jpg" alt="Project 10">
+    <div class="product-info">
+        <h3>Project 10</h3>
+        <p>Description of Project 10.</p>
+        <button onclick="addToCart('Project 10')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 11 -->
+<div class="product">
+    <img src="project11.jpg" alt="Project 11">
+    <div class="product-info">
+        <h3>Project 11</h3>
+        <p>Description of Project 11.</p>
+        <button onclick="addToCart('Project 11')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 12 -->
+<div class="product">
+    <img src="project12.jpg" alt="Project 12">
+    <div class="product-info">
+        <h3>Project 12</h3>
+        <p>Description of Project 12.</p>
+        <button onclick="addToCart('Project 12')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 13 -->
+<div class="product">
+    <img src="project13.jpg" alt="Project 13">
+    <div class="product-info">
+        <h3>Project 13</h3>
+        <p>Description of Project 13.</p>
+        <button onclick="addToCart('Project 13')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 14 -->
+<div class="product">
+    <img src="project14.jpg" alt="Project 14">
+    <div class="product-info">
+        <h3>Project 14</h3>
+        <p>Description of Project 14.</p>
+        <button onclick="addToCart('Project 14')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 15 -->
+<div class="product">
+    <img src="project15.jpg" alt="Project 15">
+    <div class="product-info">
+        <h3>Project 15</h3>
+        <p>Description of Project 15.</p>
+        <button onclick="addToCart('Project 15')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 16 -->
+<div class="product">
+    <img src="project16.jpg" alt="Project 16">
+    <div class="product-info">
+        <h3>Project 16</h3>
+        <p>Description of Project 16.</p>
+        <button onclick="addToCart('Project 16')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 17 -->
+<div class="product">
+    <img src="project17.jpg" alt="Project 17">
+    <div class="product-info">
+        <h3>Project 17</h3>
+        <p>Description of Project 17.</p>
+        <button onclick="addToCart('Project 17')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 18 -->
+<div class="product">
+    <img src="project18.jpg" alt="Project 18">
+    <div class="product-info">
+        <h3>Project 18</h3>
+        <p>Description of Project 18.</p>
+        <button onclick="addToCart('Project 18')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 19 -->
+<div class="product">
+    <img src="project19.jpg" alt="Project 19">
+    <div class="product-info">
+        <h3>Project 19</h3>
+        <p>Description of Project 19.</p>
+        <button onclick="addToCart('Project 19')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Project 20 -->
+<div class="product">
+    <img src="project20.jpg" alt="Project 20">
+    <div class="product-info">
+        <h3>Project 20</h3>
+        <p>Description of Project 20.</p>
+        <button onclick="addToCart('Project 20')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+            <h2 id="components">Components</h2>
+            <!-- Products classified as Components -->
+            <!-- Component 1 -->
+            <div class="product">
+                <img src="component1.jpg" alt="Component 1">
+                <div class="product-info">
+                    <h3>Component 1</h3>
+                    <p>Description of Component 1.</p>
+                    <button onclick="addToCart('Component 1')">Add to Cart</button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- Repeat for Component 2 to Component 20 -->
+             <!-- Component 2 -->
+<div class="product">
+    <img src="component2.jpg" alt="Component 2">
+    <div class="product-info">
+        <h3>Component 2</h3>
+        <p>Description of Component 2.</p>
+        <button onclick="addToCart('Component 2')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 3 -->
+<div class="product">
+    <img src="component3.jpg" alt="Component 3">
+    <div class="product-info">
+        <h3>Component 3</h3>
+        <p>Description of Component 3.</p>
+        <button onclick="addToCart('Component 3')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 4 -->
+<div class="product">
+    <img src="component4.jpg" alt="Component 4">
+    <div class="product-info">
+        <h3>Component 4</h3>
+        <p>Description of Component 4.</p>
+        <button onclick="addToCart('Component 4')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 5 -->
+<div class="product">
+    <img src="component5.jpg" alt="Component 5">
+    <div class="product-info">
+        <h3>Component 5</h3>
+        <p>Description of Component 5.</p>
+        <button onclick="addToCart('Component 5')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 6 -->
+<div class="product">
+    <img src="component6.jpg" alt="Component 6">
+    <div class="product-info">
+        <h3>Component 6</h3>
+        <p>Description of Component 6.</p>
+        <button onclick="addToCart('Component 6')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 7 -->
+<div class="product">
+    <img src="component7.jpg" alt="Component 7">
+    <div class="product-info">
+        <h3>Component 7</h3>
+        <p>Description of Component 7.</p>
+        <button onclick="addToCart('Component 7')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 8 -->
+<div class="product">
+    <img src="component8.jpg" alt="Component 8">
+    <div class="product-info">
+        <h3>Component 8</h3>
+        <p>Description of Component 8.</p>
+        <button onclick="addToCart('Component 8')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 9 -->
+<div class="product">
+    <img src="component9.jpg" alt="Component 9">
+    <div class="product-info">
+        <h3>Component 9</h3>
+        <p>Description of Component 9.</p>
+        <button onclick="addToCart('Component 9')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 10 -->
+<div class="product">
+    <img src="component10.jpg" alt="Component 10">
+    <div class="product-info">
+        <h3>Component 10</h3>
+        <p>Description of Component 10.</p>
+        <button onclick="addToCart('Component 10')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 11 -->
+<div class="product">
+    <img src="component11.jpg" alt="Component 11">
+    <div class="product-info">
+        <h3>Component 11</h3>
+        <p>Description of Component 11.</p>
+        <button onclick="addToCart('Component 11')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 12 -->
+<div class="product">
+    <img src="component12.jpg" alt="Component 12">
+    <div class="product-info">
+        <h3>Component 12</h3>
+        <p>Description of Component 12.</p>
+        <button onclick="addToCart('Component 12')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 13 -->
+<div class="product">
+    <img src="component13.jpg" alt="Component 13">
+    <div class="product-info">
+        <h3>Component 13</h3>
+        <p>Description of Component 13.</p>
+        <button onclick="addToCart('Component 13')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 14 -->
+<div class="product">
+    <img src="component14.jpg" alt="Component 14">
+    <div class="product-info">
+        <h3>Component 14</h3>
+        <p>Description of Component 14.</p>
+        <button onclick="addToCart('Component 14')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 15 -->
+<div class="product">
+    <img src="component15.jpg" alt="Component 15">
+    <div class="product-info">
+        <h3>Component 15</h3>
+        <p>Description of Component 15.</p>
+        <button onclick="addToCart('Component 15')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 16 -->
+<div class="product">
+    <img src="component16.jpg" alt="Component 16">
+    <div class="product-info">
+        <h3>Component 16</h3>
+        <p>Description of Component 16.</p>
+        <button onclick="addToCart('Component 16')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 17 -->
+<div class="product">
+    <img src="component17.jpg" alt="Component 17">
+    <div class="product-info">
+        <h3>Component 17</h3>
+        <p>Description of Component 17.</p>
+        <button onclick="addToCart('Component 17')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 18 -->
+<div class="product">
+    <img src="component18.jpg" alt="Component 18">
+    <div class="product-info">
+        <h3>Component 18</h3>
+        <p>Description of Component 18.</p>
+        <button onclick="addToCart('Component 18')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 19 -->
+<div class="product">
+    <img src="component19.jpg" alt="Component 19">
+    <div class="product-info">
+        <h3>Component 19</h3>
+        <p>Description of Component 19.</p>
+        <button onclick="addToCart('Component 19')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Component 20 -->
+<div class="product">
+    <img src="component20.jpg" alt="Component 20">
+    <div class="product-info">
+        <h3>Component 20</h3>
+        <p>Description of Component 20.</p>
+        <button onclick="addToCart('Component 20')">Add to Cart</button>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+        </section>
+    </div>
+
+    <!-- Shopping cart -->
+    <aside id="cart" class="collapsed">
+        <div id="cart-content">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <div class="checkout-button-container">
+                <button onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+        <div id="cart-toggle" onclick="toggleCart()">
+            <span>&#9664;</span> <!-- Unicode for left arrow symbol -->
+        </div>
     </aside>
-
-
 
     <!-- Contact section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <ul class="contact-links">
             <li>
-                
                 <img src=".\pictures\gmail-logo.jpg" alt="Gmail Logo">
                 <a href="mailto:eharishreddy9963@gmail.com">Gmail</a>
             </li>
@@ -157,25 +553,22 @@
                 <img src=".\pictures\instagram-logo.jpg" alt="Instagram Logo">
                 <a href="https://www.instagram.com/hre_innovations?igsh=N2xvMWN0MmV5YTBk">Instagram</a>
             </li>
-                
-
         </ul>
     </section>
 
-     <!-- ***** Footer ***** -->
+    <!-- Footer -->
     <footer role="contentinfo" class="footer">
         <div class="row">
             <!-- Social links -->
             <ul class="footer__social-links">
                 <li class="footer__social-link-item">
                     <a href="https://x.com/harish_reddy996?t=d2j1pML3Knz2we2PZVCWFg&amp;s=08" title="Link to Twitter Profile">
-
                         <img src=".\pictures\twitter.svg" class="footer__social-image" alt="Twitter">
                     </a>
                 </li>
                 <li class="footer__social-link-item">
                     <a href="https://github.com/harishreddy9963/" title="Link to Github Profile">
-           <img src=".\pictures\github.svg"class="footer__social-image" alt="Github">
+                        <img src=".\pictures\github.svg" class="footer__social-image" alt="Github">
                     </a>
                 </li>
                 <li class="footer__social-link-item">
@@ -191,10 +584,9 @@
             </p>
         </div>
     </footer>
-
-    <!-- Scroll-up arrow -->
-    <a href="#top" class="back-to-top" title="Back to Top" style="visibility: visible; opacity: 1; transform: scale(1);">
-        <img src="D:\portfolio\arrow-up.svg" alt="Back to Top" class="back-to-top__image">
+<!-- Scroll-up arrow -->
+    <a href="#top" class="back-to-top" title="Back to Top" style="visibility: visible; opacity: 1; transform: scale(1); display: block;">
+        <img src=".\pictures\arrow-up.svg" alt="Back to Top" class="back-to-top__image">
     </a>
     <script src="script.js"></script>
 </body>
